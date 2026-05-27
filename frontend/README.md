@@ -1,58 +1,45 @@
-# Frontend - Catálogo de Perfumes
+# Lumen Parfums - Frontend Component Library
 
-Componente NPM reutilizable para catálogo y carrito de compra de perfumes.
+Este repositorio contiene los componentes frontend para la plataforma de perfumería de lujo **Lumen Parfums**. Desarrollado con React 18, TypeScript y Tailwind CSS, siguiendo el patrón de componentes reutilizables NPM.
+
+## Requisitos
+
+- Node.js 18+
+- NPM 9+
+
+## Estructura de Carpetas
+
+- `src/components`: Componentes visuales (Navbar, Catalogo, Carrito, etc.)
+- `src/hooks`: Lógica de estado y consumo de API.
+- `src/types`: Definiciones de interfaces TypeScript.
+- `src/styles`: Configuraciones de Tailwind y CSS global.
 
 ## Instalación
 
 ```bash
-npm install @perfumeria/frontend
+npm install
 ```
-
-## Uso
-
-```tsx
-import { CatalogoPerfumes, CarritoCompra } from '@perfumeria/frontend';
-
-export default function App() {
-  return (
-    <>
-      <CatalogoPerfumes apiUrl="http://localhost:3001/api" />
-      <CarritoCompra />
-    </>
-  );
-}
-```
-
-## Estructura
-
-```
-src/
-├── components/
-│   ├── CatalogoPerfumes.tsx      # Listado de productos
-│   ├── CarritoCompra.tsx          # Carrito de compras
-│   └── ProductoCard.tsx           # Tarjeta individual
-├── hooks/
-│   ├── useCarrito.ts              # Lógica del carrito
-│   └── useProductos.ts            # Lógica de productos
-├── types/
-│   └── index.ts                   # Tipos TypeScript
-└── index.ts                       # Punto de entrada
-```
-
-## Props principales
-
-- `apiUrl`: URL de la API BFF
-- `onCompraRealizada`: Callback después de comprar
 
 ## Desarrollo
 
+Para ejecutar la aplicación en modo desarrollo:
+
 ```bash
-npm install
 npm run dev
 ```
 
-## Build
+La aplicación estará disponible en `http://localhost:5173`.
+
+## Uso como Librería
+
+Para empaquetar los componentes como una librería NPM:
 
 ```bash
 npm run build:lib
 ```
+
+Esto generará la carpeta `dist/` con los archivos necesarios para ser publicados o consumidos por otros proyectos.
+
+## Integración con BFF
+
+Por defecto, la aplicación apunta al BFF en `http://localhost:3001/api`. Asegúrate de tener el BFF en ejecución para que el catálogo de productos se cargue correctamente.
